@@ -7,109 +7,105 @@
     <link rel="stylesheet" href="stylees.css">
     <!-- Bootstrap Css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Tu Chanchito</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">Hidden brand</a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+    
+    <nav class="nav-center-adjust">
+        
+        <h1>Tu Chanchito</h1>
+
+            <div class="nav-box-btns">
+                <button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Filtros</button>
+                <button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Categorias</button>
             </div>
-        </div>
+            <!--modal-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">categproa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>              
     </nav>
 
-
-    <div class="column-content">
-
-        <div class="col-md8 d-flex justify-content-flex-start column">
-
+    
+    <div class="container-fluid container-card-main"> 
+    
+        <aside class="col aside-cards">
             <div class="card m-2 cb1 text-center" style="width: 18rem;">
-                
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        
-                        
-                    </div>
-            </div>
-
-            <div class="card m-2 cb1 text-center" style="width: 18rem;">
-                
                 <a href="#" class="btn btn-primary">Go somewhere</a>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    
-                    
+                    <h5 class="card-title">Card title</h5>               
                 </div>
             </div>
 
             <div class="card m-2 cb1 text-center" style="width: 18rem;">
-                
                 <a href="#" class="btn btn-primary">Go somewhere</a>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    
-                    
                 </div>
-            </div>
-            
-        </div>
+            </div>            
+        </aside>
+
+        <section class="main-attached">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque aliquam eveniet nemo necessitatibus amet repudiandae quis mollitia odit similique, corporis omnis rem non quasi laudantium quae laborum reiciendis iusto in?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim, corporis repudiandae repellendus nesciunt ducimus totam tenetur maiores accusantium, dolores, dicta mollitia eligendi iure. Earum molestiae tempore obcaecati animi nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, veniam! Harum commodi expedita aperiam perferendis quod saepe sint explicabo molestiae suscipit, adipisci odit minima fugiat in modi numquam, repellat sapiente!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quo aperiam soluta consequatur consequuntur voluptas neque hic repudiandae iure molestiae earum, provident voluptate perferendis nam assumenda accusamus, corrupti ipsam natus?</p>            
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem mollitia obcaecati quisquam enim qui iste vero dignissimos amet harum cum asperiores nostrum quam accusamus, repellat fuga sapiente in. Facilis, quis!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam neque atque doloremque, hic fuga rem dolorem possimus officiis sequi accusamus asperiores dolores eaque eos ipsam numquam sunt voluptate aliquid.</p>
+
+        </section>
         
-    </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                </form>
-            </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    </div> 
     
-
     
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

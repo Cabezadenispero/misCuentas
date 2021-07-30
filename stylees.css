@@ -4,4 +4,57 @@ body {
     background-position: center center;
     background-attachment: fixed;
     color: white;
+    width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+h1 {
+    font-size:4rem !important;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    widh
+}
+
+.nav-center-adjust {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    padding: 2rem;
+}
+
+.btn-primary {
+    margin: 5px;
+    background-color: aquamarine;
+}
+
+.nav-box-btns {
+    width: 40%;
+}
+.btn-modal {
+    width:35%;
+}
+
+.container-card-main {
+
+    display: flex;
+    flex-direction:row;
+    width: 100% !important;
+}
+
+.aside-cards {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.main-attached {
+    display: flex;
+    width: 60%;
+    background-color: white;
+    margin: 0 3rem 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    flex-direction:column;
+    padding: 2rem;
+    
 }
