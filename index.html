@@ -12,7 +12,7 @@
 <body>
     
     <nav class="nav-center-adjust">        
-        <h1>Mi Banca</h1>
+        <h1>ChorrADAs</h1>
             <div class="nav-box-btns">
                 <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Categorías</button>
                 <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Reportes</button>
@@ -21,7 +21,7 @@
 
             <!--modal-->
             <!--modal categorias-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" data-bs-spy="scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -32,9 +32,8 @@
                         <form>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Nueva Categoría:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                                
-                            </div>
+                                <input type="text" class="form-control" id="recipient-name">                                
+                            </div>            
                             <div class="mb-3">
                                 <div class="modal_lista-categorias">
                                     <button type="button" class="btn_editar">editar</button>
@@ -51,7 +50,7 @@
             </div>
 
             <!--modal reportes-->
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal2" data-bs-spy="scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -63,7 +62,7 @@
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Recipient:</label>
                                 <input type="text" class="form-control" id="recipient-name">
-                            </div>
+                            </div>                      
                             <div class="mb-3">
                                 <label for="message-text" class="col-form-label">Message:</label>
                                 <textarea class="form-control" id="message-text"></textarea>
@@ -75,15 +74,24 @@
                             <button type="button" class="btn btn-primary">Send message</button>
                         </div>
                     </div>
+                </div>    <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nueva Categoría:</label>
+                    <input type="text" class="form-control" id="recipient-name">                                
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nueva Categoría:</label>
+                    <input type="text" class="form-control" id="recipient-name">                                
                 </div>
             </div>              
     </nav>
 
-    
+<!-- main -->
+
     <div class="container-fluid container-card-main"> 
-    
-        <aside class="col aside-cards">
-            <div class="card m-2 card_widht-center text-center">
+    <!-- aside cards -->
+        <aside class="aside-cards-column">
+            <!--card Balance -->
+            <div class="card card_width-center text-center">
                 <h3 class="card-title">Balance</h3>  
                 <div class="card_contain-center">
                     <table class="table">
@@ -108,20 +116,57 @@
                 </div>
             </div>
 
-            <div class="card m-2 card_widht-center cb1 text-center">
-                <div class="card-body">
+            <!--card filtros -->
+            <div class="card card_width-center cb1 text-center">
+                
+                <div class="card-body flex-row">
                     <h5 class="card-title">Filtros</h5>
-
+                    <button class="btn_hide-filters" type="reset">Ocultar filtros</button>
                 </div>
+
+                <form action="">
+
+                    <label for="tipo"></label>
+                    <select class="form-select" id="tipo" aria-label="Default select example">
+                        <option selected>Todos</option>
+                        <option value="1">Todos</option>
+                        <option value="2">Gastos</option>
+                        <option value="3">Ganancia</option>
+                    </select>
+
+                    <label for="categoria"></label>
+                    <select class="form-select" id="categoria" aria-label="Default select example">
+                        <option selected>Categoria</option>
+                        <option value="1">Todos</option>
+                        <option value="2">Gastos</option>
+                        <option value="3">Ganancia</option>
+                    </select>
+
+                    <label for="birthday">Desde:</label>
+                    <input type="date" id="desde">                 
+                    
+                    <label for="ordenar">Ordenar por</label>
+                    <select class="form-select" id="ordenar" aria-label="Default select example">
+                        <option selected>Más reciente</option>
+                        <option value="1">Más reciente</option>
+                        <option value="2">Menos reciente</option>
+                        <option value="3">Mayor monto</option>
+                        <option value="4">Menor monto</option>
+                        <option value="5">A/Z</option>
+                        <option value="6">Z/A</option>
+                    </select>
+                </form>
             </div>            
         </aside>
 
-        <section class="main-attached">
-            <div class="main_title-btn-box">
+         <!-- OPERACIONES -->
+        <section class="panel-ppal_main-operaciones">
+
+            <div class="main_title-btn-box flex-row">
                 <h3>Operaciones</h3>
-                <button type="button" class="btn b">+Nueva Operacion</button>
-            </div>
-            
+                <button type="button" class="btn_nueva-operacion">+Nueva Operacion</button>
+            </div>     
+
             <table class="table">
                 <thead>
                     <tr>
@@ -158,8 +203,7 @@
             </table>
         </section>
     </div> 
-    
-    
+        
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

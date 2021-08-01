@@ -44,33 +44,66 @@ h1 {
     flex-direction:row;
     align-items: flex-start;
     margin-top: 3rem;
-    width: 100% ;
 }
 
-.aside-cards {
+.aside-cards-column{
     display: flex;    
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 40%;
+    padding: 0;
 }
 
-.card_widht-center {
-    width: 20rem;
+.card_width-center {
+    width: 80%;
     padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 .card_contain-center {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
+    margin-bottom: 1rem;    
 }
 
-.main-attached {
-    width: 80%;
-    background-color: white;
-    margin: 0 3rem 1rem;
+.panel-ppal_main-operaciones{
+    width: 100%;
+    background-color: white;    
     border-radius: 3px;
     text-align: center;
-    flex-direction:column;
     padding: 2rem;   
+}
+
+.main_title-btn-box {
+    margin-bottom: 2rem;
+}
+
+.btn_nueva-operacion {
+    background-color: rgb(157, 240, 171);
+    border-top: none;
+    border-left: none;
+    border-right:none;
+    border-bottom: 1px grey solid;
+    outline: none;
+    border-radius: 30px 3px 0px 0px;
+    padding: 1rem 2rem .5rem;
+}
+
+.btn_hide-filters {
+    border: none;
+    outline: none;
+    color: blue;
+    background-color:transparent;
+}
+
+
+
+/* class comunes */
+
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
