@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,100;1,400;1,700&display=swap');
 
 body {
-    background-image: url(./assets/photo-1503933190776-da31c7700f80.jpeg);
+    background-image: url(./assets/fermin-rodriguez-penelas-6CQe-WYoPPk-unsplash.jpg);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    color: white;
+    color: white ;
     width: 100vw;
     font-family: 'Lato', sans-serif;
     padding: 1rem;
@@ -14,36 +14,42 @@ body {
 
 .nav-center-adjust {
     display: flex;
-    flex-direction:row;
+    flex-direction:row-reverse;
+    align-items: flex-end;
     width: 100%;
     padding: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    position: relative;
 }
 
 h1 {
-    font-size:4rem !important;
+    font-size: 8rem !important;
     text-align: center;
-    width: 70%;
+    z-index: -1;
+    position: absolute;
+    left: 1rem;
+    top:-1rem;
+    margin-left: 3rem;
+    color: white;
 }
 
-.btn-primary {
-    margin-left: 5px;
-    background-color: aquamarine;
-}
 .nav-box-btns {
     display: flex;
-    width: 50%;
+    align-items: center;
+    margin-right: 3rem;
+
 }
 
 .btn-modal {
-    width:40%;
+    width:50%;
+    margin-left:0.5rem;
 }
 
 .container-card-main {
     display: flex;
     flex-direction:row;
     align-items: flex-start;
-    margin-top: 3rem;
+    margin-top: 2.6rem;
 }
 
 .aside-cards-column{
@@ -70,7 +76,6 @@ h1 {
 .panel-ppal_main-operaciones{
     width: 100%;
     background-color: white;    
-    border-radius: 3px;
     text-align: center;
     padding: 2rem;   
 }
@@ -80,14 +85,10 @@ h1 {
 }
 
 .btn_nueva-operacion {
-    background-color: rgb(157, 240, 171);
-    border-top: none;
-    border-left: none;
-    border-right:none;
-    border-bottom: 1px grey solid;
+    background-color: transparent;
+    border: 1px transparent;
     outline: none;
-    border-radius: 30px 3px 0px 0px;
-    padding: 1rem 2rem .5rem;
+    color: rgb(6, 87, 12);
 }
 
 .btn_hide-filters {
@@ -105,6 +106,7 @@ label {
     margin-bottom: .2rem;
 }
 
+
 #desde {
     height:2.5rem;
     padding: .8rem;
@@ -120,4 +122,17 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.card_effect-transparent {
+    border: 1px solid transparent;
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(66, 50, 50, 0.2);
+    background-color: rgba(157, 243, 239, 0.2) !important; 
+    border-color: transparent !important; 
+    /*border-top-color: rgba(255, 255, 255, 0.3);  
+    border-left-color: rgba(255, 255, 255, 0.3);  
+    border-bottom-color: rgba(255, 255, 255, 0.9);  
+    border-right-color: rgba(255, 255, 255, 0.9);*/  
+    border-radius: 10px !important;
 }
