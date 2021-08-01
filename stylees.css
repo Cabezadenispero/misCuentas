@@ -1,60 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,100;1,400;1,700&display=swap');
+
 body {
-    background-image: url(./assets/dylan-alcock-Xss4cp4exmU-unsplash.jpg);
+    background-image: url(./assets/fermin-rodriguez-penelas-6CQe-WYoPPk-unsplash.jpg);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    color: white;
+    color: white ;
     width: 100vw;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
-}
-
-h1 {
-    font-size:4rem !important;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    widh
+    font-family: 'Lato', sans-serif;
+    padding: 1rem;
 }
 
 .nav-center-adjust {
     display: flex;
-    justify-content:space-between;
+    flex-direction:row-reverse;
+    align-items: flex-end;
     width: 100%;
-    padding: 2rem;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    position: relative;
 }
 
-.btn-primary {
-    margin: 5px;
-    background-color: aquamarine;
+h1 {
+    font-size: 8rem !important;
+    text-align: center;
+    z-index: -1;
+    position: absolute;
+    left: 1rem;
+    top:-1rem;
+    margin-left: 3rem;
+    color: white;
 }
 
 .nav-box-btns {
-    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+
 }
+
 .btn-modal {
-    width:35%;
+    width:50%;
+    margin-left:0.5rem;
 }
 
 .container-card-main {
-
     display: flex;
     flex-direction:row;
-    width: 100% !important;
+    align-items: flex-start;
+    margin-top: 2.6rem;
 }
 
-.aside-cards {
-    display: flex;
-    flex-grow: 1;
+.aside-cards-column{
+    display: flex;    
     flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding: 0;
 }
 
-.main-attached {
-    display: flex;
-    width: 60%;
-    background-color: white;
-    margin: 0 3rem 1rem;
-    border-radius: 2rem;
-    text-align: center;
-    flex-direction:column;
+.card_width-center {
+    width: 80%;
     padding: 2rem;
-    
+    margin-bottom: 1rem;
+}
+
+.card_contain-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;    
+}
+
+.panel-ppal_main-operaciones{
+    width: 100%;
+    background-color: white;    
+    text-align: center;
+    padding: 2rem;   
+}
+
+.main_title-btn-box {
+    margin-bottom: 2rem;
+}
+
+.btn_nueva-operacion {
+    background-color: transparent;
+    border: 1px transparent;
+    outline: none;
+    color: rgb(6, 87, 12);
+}
+
+.btn_hide-filters {
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    color: rgb(6, 87, 12);
+    background-color:transparent;
+}
+
+label {
+    font-size:1rem;
+    font-weight: bold;
+    margin-top: .5rem;
+    margin-bottom: .2rem;
+}
+
+
+#desde {
+    height:2.5rem;
+    padding: .8rem;
+    width:100%;
+    border-radius:3px;
+    border: 1px solid #CED4DA;
+}
+
+/* class comunes */
+
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card_effect-transparent {
+    border: 1px solid transparent;
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(66, 50, 50, 0.2);
+    background-color: rgba(157, 243, 239, 0.2) !important; 
+    border-color: transparent !important; 
+    /*border-top-color: rgba(255, 255, 255, 0.3);  
+    border-left-color: rgba(255, 255, 255, 0.3);  
+    border-bottom-color: rgba(255, 255, 255, 0.9);  
+    border-right-color: rgba(255, 255, 255, 0.9);*/  
+    border-radius: 10px !important;
 }
