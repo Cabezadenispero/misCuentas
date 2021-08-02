@@ -6,6 +6,9 @@ function uuidv4() {
     });
 }
 
+
+// --------- Listado de operaciones -----------------------
+
 function crearCategoria(nombre) {
     return {
         id: uuidv4(),
@@ -39,3 +42,6 @@ function listadoCategorias() {
         }
     }
 }
+
+
+
