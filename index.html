@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="stylees.css">
     <!-- Bootstrap Css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="objetos.js"></script>
+    <script src="operaciones.js"></script>
+    <script src="dom.js"></script>
+    
     <title>Mi Banca</title>
 </head>
 <body>
-    
-    <nav class="nav-center-adjust">        
+
+    <nav class="nav-center-adjust">
         <h1>MisCuentas</h1>
             <div class="nav-box-btns flex-row">
-                <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Categorías</button>
+                <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Administrar Categorías</button>
                 <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Reportes</button>
             </div>
 
             <!--modal-->
             <!--modal categorias-->
-                        
-            <div class="modal fade" id="exampleModal" data-bs-spy="scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content modal_effect-transparent">
                         <div class="modal-header">
@@ -32,73 +36,18 @@
                         <form>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Nueva Categoría:</label>
-                                <input type="text" class="form-control" id="recipient-name">                                
-                            </div>  
+                                <input type="text" class="form-control" id="category-name">
+                                <button type="button" id="nuevaCategoria" class="btn btn-secondary">Añadir</button>
+                            </div>
                             <div class="card_contain-center">
-                                <table class="table">                        
-                                    <tbody>
+                                <table class="table">
+                                    <tbody id="categories-body">
                                         <tr>
                                             <td class="td-center td-color" scope="row">Ganacias</td>
                                             <td>editar/borrar</td>
                                         </tr>
-                                        <tr>
-                                            <td class="td-center td-color" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center td-color" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>i
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="td-center" scope="row">Ganacias</td>
-                                            <td>editar/borrar</td>
-                                        </tr>    
                                     </tbody>
-                                </table>            
+                                </table>
                             </div>
                         </form>
                     </div>
@@ -110,6 +59,7 @@
             </div>
 
             <!--modal reportes-->
+            <!--
             <div class="modal fade" id="exampleModal2" data-bs-spy="scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
@@ -118,28 +68,29 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                     <div class="modal-body">
-                        
+
                     </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>           
-                    </div>    
+                        </div>
+                    </div>
                 </div>
-            </div>              
+            </div>
+        -->
     </nav>
 
 <!-- main -->
 
-    <div class="container-fluid container-card-main"> 
+    <div class="container-fluid container-card-main">
     <!-- aside cards -->
         <aside class="aside-cards-column">
             <!--card Balance -->
             <div class="card card_width-center card_effect-transparent">
                 <div class="card_header flex-row">
-                    <h3 class="card-title">Balance</h3> 
+                    <h3 class="card-title">Balance</h3>
                 </div>
                 <div class="card_contain-center">
-                    <table class="table">                        
+                    <table class="table">
                         <tbody>
                             <tr>
                                 <td class="td-center" scope="row">Ganacias</td>
@@ -147,17 +98,17 @@
                             </tr>
                             <tr>
                                 <td class="td-center" scope="row">Gastos</td>
-                                <td>22</td>                                
+                                <td>22</td>
                             </tr>
                             <tr>
                                 <th class="td-center"  scope="row">Total</th>
-                                <td>22</td>                                
+                                <td>22</td>
                             </tr>
                         </tbody>
-                    </table>            
+                    </table>
                 </div>
             </div>
-
+            
             <!--card filtros -->
             <div class="card card_width-center cb1 card_effect-transparent">
                 <div class="card_header flex-row ">
@@ -182,7 +133,7 @@
                     </select>
 
                     <label for="filter_date">Desde:</label>
-                    <input type="filter_date" id="filter_desde">                 
+                    <input type="filter_date" id="filter_desde">
 
                     <label for="filter_ordenar">Ordenar por</label>
                     <select class="form-select" id="filter_ordenar" aria-label="Default select example">
@@ -195,56 +146,43 @@
                         <option value="6">Z/A</option>
                     </select>
                 </form>
-            </div>            
+            </div>
         </aside>
 
         <!-- OPERACIONES -->
         <section class="container-fluid panel-ppal_main-operaciones card_effect-transparent">
             <div class="main_title-btn-box flex-row">
-                <h2>Operaciones</h2> 
-                <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModalNewCat" data-bs-whatever="@fat">+Nueva Operación</button>               
-            </div>    
-            
+                <h2>Operaciones</h2>
+                <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModalNewCat">+Nueva Operación</button>
+            </div>
+
 
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Categoria</th>
                         <th scope="col">Monto</th>
-                        <th scope="col">Detalles</th>
+                        <th scope="col">Descripción</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acción</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="operaciones-body">
                     <tr>
-                        <th scope="row">comida</th>
-                        <td>22</td>
-                        <td>Salida </td>
+                        <td id="categoria-nodo">comida</td>
+                        <td id="monto-nodo">22</td>
+                        <td id="descripcion-nodo">Salida </td>
                         <td>15/2/2020</td>
                         <td>editar/eliminar</td>
                     </tr>
-                    <tr>
-                        <th scope="row">comida</th>
-                        <td>22</td>
-                        <td>Salida </td>
-                        <td>15/2/2020</td>
-                        <td>editar/eliminar</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">paseo</th>
-                        <td>22</td>
-                        <td>ba dianoagahigan ahfihaiuf ahfiuafhiuaf fahiuf haiufa a</td>
-                        <td>15/2/2020</td>
-                        <td>editar/eliminar</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
-    </div> 
+    </div>
 
     <!-- MOdal NUEVA OPERACIÓN -->
-
+    
     <div class="modal fade" id="exampleModalNewCat" data-bs-spy="scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content modal_effect-transparent">
@@ -256,8 +194,10 @@
                     <form>
                         <div class="card_contain-center">
                             <form action="">
-                                <label for="description">Descripción</label>
-                                <input type="text" name="descript-new-cat" id="description-new-cat">
+                                <label for="op_description">Descripción</label>
+                                <input type="text" name="descript-new-cat" id="op_description">
+                                <label for="monto">Monto</label>
+                                <input type="number" id="monto">
                                 <label for="tipo">Tipo</label>
                                 <select class="form-select" id="tipo" aria-label="Default select example">
                                     <option selected>Todos</option>
@@ -265,7 +205,7 @@
                                     <option value="2">Gastos</option>
                                     <opti </div>on value="3">Ganancia</option>
                                 </select>
-            
+
                                 <label for="categoria">Categoria</label>
                                 <select class="form-select" id="categoria" aria-label="Default select example">
                                     <option selected>Categoria</option>
@@ -273,10 +213,10 @@
                                     <option value="2">Gastos</option>
                                     <option value="3">Ganancia</option>
                                 </select>
-            
+
                                 <label for="birthday">Desde:</label>
-                                <input type="date" id="desde">                 
-            
+                                <input type="date" id="desde">
+
                                 <label for="ordenar">Ordenar por</label>
                                 <select class="form-select" id="ordenar" aria-label="Default select example">
                                     <option selected>Más reciente</option>
@@ -292,12 +232,14 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="agregar-operacion" class="btn">Añadir</button>
+                    <!--<button type="button" class="btn" data-bs-dismiss="modal">Close</button>-->
                 </div>
             </div>
         </div>
     </div>
-        
+
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
