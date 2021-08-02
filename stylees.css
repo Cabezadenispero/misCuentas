@@ -130,6 +130,14 @@ label {
     border: 1px solid #CED4DA;
 }
 
+#filter_desde {
+    height:2.5rem;
+    padding: .8rem;
+    width:100%;
+    border-radius:3px;
+    border: 1px solid #CED4DA;
+}
+
 .td-color {
     color: white;
 }

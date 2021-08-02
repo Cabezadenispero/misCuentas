@@ -18,8 +18,8 @@ window.onload = (event) => {
         let objCategoria = crearCategoria(nombreCategoria)
         categorias.agregar(objCategoria)
         $('categories-body').appendChild(generarNodoHTMLCategoria(objCategoria))
+        $('category-name').value = '';
     })
-
 };
 
 function pintarCategorias() {
@@ -27,6 +27,7 @@ function pintarCategorias() {
     categorias.lista.forEach((objCategoria) => {
         $('categories-body').appendChild(generarNodoHTMLCategoria(objCategoria))
     })
+    
 }
 
 function generarNodoHTMLCategoria(objCategoria) {
@@ -52,8 +53,9 @@ function generarNodoHTMLCategoria(objCategoria) {
 
     acciones.appendChild(boton_borrar)
     tr.appendChild(nombre)
-    tr.appendChild(acciones)
+    tr.appendChild(acciones)   
 
     return tr
-    
+
 }
+

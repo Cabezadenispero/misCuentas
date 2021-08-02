@@ -11,6 +11,7 @@ function crearCategoria(nombre) {
         id: uuidv4(),
         nombre: nombre
     }
+    
 }
 
 function listadoCategorias() {
@@ -30,7 +31,7 @@ function listadoCategorias() {
     },
     cargar: function() {
         const listaJSON = window.localStorage.getItem('ahorrADAS.categorias')
-        this.lista = JSON.parse(listaJSON)
+        if(listaJSON!=null) this.lista = JSON.parse(listaJSON)
     },
         guardar: function() {
         const listaJSON = JSON.stringify(this.lista)
