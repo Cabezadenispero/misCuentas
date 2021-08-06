@@ -4,11 +4,12 @@ const categorias = listadoCategorias()
 categorias.cargar()
 
 const operaciones = listadoOperaciones()
-
+operaciones.cargar()
 
 window.onload = (event) => {
 
     pintarCategorias()
+    pintarOperaciones()
 
     const modalCategoria = $('exampleModal')
     modalCategoria.addEventListener('shown.bs.modal', function () {
@@ -28,14 +29,18 @@ window.onload = (event) => {
     $('agregar-operacion').addEventListener('click', function() {
         const operacionMonto = $('monto').value
         const operacionDescripcion = $('op_description').value
-        let objOperacion = crearOperacion(operacionMonto)
+        let objOperacion = crearOperacion(operacionMonto, operacionDescripcion)
         operaciones.agregar(objOperacion)
-        $('monto-nodo').appendChild(generarNodoHTMLOperacion(objOperacion))
-        $('descripcion-nodo').appendChild(generarNodoHTMLOperacion(objOperacion))
+        
+        $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion))
+        
         $('monto').value = '';
         $('op_description').value = ''; 
+
         console.log(operacionMonto)
         console.log(operacionDescripcion)
+        console.log(objOperacion)
+        console.log(operaciones)
     })
 };
 
@@ -81,36 +86,51 @@ function generarNodoHTMLCategoria(objCategoria) {
 
 function pintarOperaciones() {
     $('operaciones-body').innerHTML = '';
-    categorias.lista.forEach((objCategoria) => {
+    operaciones.lista.forEach((objOperacion) => {
         $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion));
     })
     
 }
 
 function generarNodoHTMLOperacion(objOperacion) {
-    let td = document.createElement('td')
-    td.id = objOperacion.id
-    //tr.setAttribute('scope', 'row')
-    td.className = "td-center td-color"
+    
+    
+    let operacionNodo = document.createElement('tr')
+    operacionNodo.id = objOperacion.id
+    
+    let categoriaNodo = document.createElement('td')
+    categoriaNodo.innerHTML = "categoria"
+    
+    let montoNodo = document.createElement('td')
+    montoNodo.innerHTML = objOperacion.monto
+    
+    let descripcionNodo = document.createElement('td')
+    descripcionNodo.innerHTML = objOperacion.descripcion
+    
+    let fechaNodo = document.createElement('td')
+    
+    let acciones = document.createElement('td')
 
-    let nombre = document.createElement('td')
-    nombre.innerHTML = objOperacion.nombre
+    let boton_borrar = document.createElement('button')
+    boton_borrar.className = "btn btn-secondary"
+    boton_borrar.innerHTML = "Eliminar"
+    boton_borrar.setAttribute('data-id', objOperacion.id)
+    
+    boton_borrar.onclick = function(e) {
+        let id_operacion = e.target.getAttribute('data-id')
+        $(id_operacion).remove()
+        operaciones.eliminar(id_operacion)
+    }
 
-    //let acciones = document.createElement('td')
+    acciones.appendChild(boton_borrar)
 
-    //let boton_borrar = document.createElement('button')
-    //boton_borrar.className = "btn btn-secondary"
-    //boton_borrar.innerHTML = "Eliminar"
-    //boton_borrar.setAttribute('data-id', obj.id)
-    //boton_borrar.onclick = function(e) {
-        //let id_categoria = e.target.getAttribute('data-id')
-        //$(id_categoria).remove()
-        //categorias.eliminar(id_categoria)
-    //}
-
-    //acciones.appendChild(boton_borrar)
+    operacionNodo.appendChild(categoriaNodo)
+    operacionNodo.appendChild(montoNodo)
+    operacionNodo.appendChild(descripcionNodo)
+    operacionNodo.appendChild(fechaNodo)
+    operacionNodo.appendChild(acciones)
     //tr.appendChild(nombre)
     //tr.appendChild(acciones)   
 
-    return td
+    return operacionNodo
 }
