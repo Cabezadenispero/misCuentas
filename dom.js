@@ -35,7 +35,9 @@ window.onload = (event) => {
         const operacionMonto = $('monto').value
         const operacionDescripcion = $('op_description').value
         const operacionCategoriaId = $('op_categoria').value
-        let objOperacion = crearOperacion(operacionMonto, operacionDescripcion, operacionCategoriaId)
+        const operacionTipo = $('op_tipo').value
+
+        let objOperacion = crearOperacion(operacionMonto, operacionDescripcion, operacionCategoriaId, operacionTipo)
         operaciones.agregar(objOperacion)
         
         $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion))
@@ -47,6 +49,7 @@ window.onload = (event) => {
         console.log(operacionDescripcion)
         console.log(objOperacion)
         console.log(operaciones)
+
     })
 };
 
@@ -116,6 +119,8 @@ function generarNodoHTMLOperacion(objOperacion) {
     
     let montoNodo = document.createElement('td')
     montoNodo.innerHTML = objOperacion.monto
+    if(objOperacion.tipo == "gasto") montoNodo.className = "rojo"
+    else montoNodo.className = "verde"
     
     let descripcionNodo = document.createElement('td')
     descripcionNodo.innerHTML = objOperacion.descripcion
