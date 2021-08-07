@@ -6,7 +6,6 @@ function uuidv4() {
     });
 }
 
-
 // --------- Listado de operaciones -----------------------
 
 function crearCategoria(nombre) {
@@ -21,25 +20,31 @@ function listadoCategorias() {
     return {
         lista: [],
         agregar: function(categoria) {
-        this.lista.push(categoria)
-        this.guardar()
-    },
-    eliminar: function(id_categoria) {
-        const objIndex = this.lista.findIndex((element) => {
-        return element.id == id_categoria
-        })
-        console.log('el Indice esta en ' + objIndex)
-        this.lista.splice(objIndex,1)
-        this.guardar()
-    },
-    cargar: function() {
-        const listaJSON = window.localStorage.getItem('ahorrADAS.categorias')
-        if(listaJSON!=null) this.lista = JSON.parse(listaJSON)
-    },
+            this.lista.push(categoria)
+            this.guardar()
+            },
+        eliminar: function(id_categoria) {
+            const objIndex = this.lista.findIndex((element) => {
+                return element.id == id_categoria
+            })
+            console.log('el Indice esta en ' + objIndex)
+            this.lista.splice(objIndex,1)
+            this.guardar()
+        },
+        buscarPorId: function(id_categoria) {
+            const objIndex = this.lista.findIndex((element) => {
+                return element.id == id_categoria
+            })
+            return this.lista[objIndex]
+        },
+        cargar: function() {
+            const listaJSON = window.localStorage.getItem('ahorrADAS.categorias')
+            if(listaJSON!=null) this.lista = JSON.parse(listaJSON)
+        },
         guardar: function() {
-        const listaJSON = JSON.stringify(this.lista)
-        window.localStorage.setItem('ahorrADAS.categorias', listaJSON)
-        }
+            const listaJSON = JSON.stringify(this.lista)
+            window.localStorage.setItem('ahorrADAS.categorias', listaJSON)
+            }
     }
 }
 
