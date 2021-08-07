@@ -10,6 +10,7 @@ window.onload = (event) => {
 
     pintarCategorias()
     pintarOperaciones()
+    pintarBalance()
 
     const modalCategoria = $('exampleModal')
     modalCategoria.addEventListener('shown.bs.modal', function () {
@@ -32,7 +33,7 @@ window.onload = (event) => {
     /// operacion monto y descripcion 
 
     $('agregar-operacion').addEventListener('click', function() {
-        const operacionMonto = $('monto').value
+        const operacionMonto = parseInt($('monto').value)
         const operacionDescripcion = $('op_description').value
         const operacionCategoriaId = $('op_categoria').value
         const operacionTipo = $('op_tipo').value
@@ -44,6 +45,8 @@ window.onload = (event) => {
         
         $('monto').value = '';
         $('op_description').value = ''; 
+
+        pintarBalance()
 
         console.log(operacionMonto)
         console.log(operacionDescripcion)
@@ -109,6 +112,12 @@ function pintarOperaciones() {
     })
 }
 
+function pintarBalance() {
+    $('ganancias').innerHTML = operaciones.balance.ganancias;
+    $('gastos').innerHTML = operaciones.balance.gastos;
+    $('balance').innerHTML = operaciones.balance.total;
+}
+
 function generarNodoHTMLOperacion(objOperacion) {
     
     let operacionNodo = document.createElement('tr')
@@ -138,6 +147,7 @@ function generarNodoHTMLOperacion(objOperacion) {
         let id_operacion = e.target.getAttribute('data-id')
         $(id_operacion).remove()
         operaciones.eliminar(id_operacion)
+        pintarBalance()
     }
 
     acciones.appendChild(boton_borrar)
