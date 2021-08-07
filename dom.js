@@ -9,6 +9,7 @@ operaciones.cargar()
 window.onload = (event) => {
 
     pintarCategorias()
+    pintarOptionsCategoriasFiltro()
     pintarOperaciones()
     pintarBalance()
 
@@ -54,6 +55,18 @@ window.onload = (event) => {
         console.log(operaciones)
 
     })
+
+    $('filter_tipo').addEventListener('change', function(e) {
+        if(e.target.value=="") pintarOperaciones()
+        else pintarOperacionesPorTipo(e.target.value)
+    })
+
+    $('filter_categoria').addEventListener('change', function(e) {
+        if(e.target.value=="") pintarOperaciones()
+        else pintarOperacionesPorCategoria(e.target.value)
+    })
+
+    
 };
 
 // ------------ categorias -------------
@@ -72,6 +85,21 @@ function pintarOptionsCategorias(){
         option.value = objCategoria.id
         option.innerHTML = objCategoria.nombre
         $('op_categoria').appendChild(option)
+    })
+}
+
+function pintarOptionsCategoriasFiltro() {
+    $('filter_categoria').innerHTML = ""
+    let optionDefault = document.createElement('option')
+    optionDefault.value = ""
+    optionDefault.innerHTML = "Seleccionar..."
+    $('filter_categoria').appendChild(optionDefault)
+
+    categorias.lista.forEach((objCategoria) => {
+        let option = document.createElement('option')
+        option.value = objCategoria.id
+        option.innerHTML = objCategoria.nombre
+        $('filter_categoria').appendChild(option)
     })
 }
 
@@ -109,6 +137,20 @@ function pintarOperaciones() {
     $('operaciones-body').innerHTML = '';
     operaciones.lista.forEach((objOperacion) => {
         $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion));
+    })
+}
+
+function pintarOperacionesPorTipo(tipo) {
+    $('operaciones-body').innerHTML = '';
+    operaciones.lista.forEach((objOperacion) => {
+        if(objOperacion.tipo==tipo) $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion));
+    })
+}
+
+function pintarOperacionesPorCategoria(id_categoria) {
+    $('operaciones-body').innerHTML = '';
+    operaciones.lista.forEach((objOperacion) => {
+        if(objOperacion.id_categoria==id_categoria) $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion));
     })
 }
 
