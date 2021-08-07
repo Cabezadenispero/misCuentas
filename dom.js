@@ -16,6 +16,11 @@ window.onload = (event) => {
 
     })
 
+    const modalOperacion = $('exampleModalNewCat')
+    modalOperacion.addEventListener('shown.bs.modal', function () {
+        pintarOptionsCategorias()
+    })
+
     $('nuevaCategoria').addEventListener('click', function() {
         const nombreCategoria = $('category-name').value
         let objCategoria = crearCategoria(nombreCategoria)
@@ -52,6 +57,15 @@ function pintarCategorias() {
         $('categories-body').appendChild(generarNodoHTMLCategoria(objCategoria))
     })
     
+}
+
+function pintarOptionsCategorias(){
+    categorias.lista.forEach((objCategoria) => {
+        let option = document.createElement('option')
+        option.value = objCategoria.id
+        option.innerHTML = objCategoria.nombre
+        $('op_categoria').appendChild(option)
+    })
 }
 
 function generarNodoHTMLCategoria(objCategoria) {
