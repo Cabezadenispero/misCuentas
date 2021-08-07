@@ -1,8 +1,9 @@
-function crearOperacion(monto, descripcion) {
+function crearOperacion(monto, descripcion, id_categoria) {
     return {
         id: uuidv4(),
         monto: monto,
         descripcion: descripcion,
+        id_categoria: id_categoria
     }
     
 }

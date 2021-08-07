@@ -31,6 +31,12 @@ function listadoCategorias() {
             this.lista.splice(objIndex,1)
             this.guardar()
         },
+        buscarPorId: function(id_categoria) {
+            const objIndex = this.lista.findIndex((element) => {
+                return element.id == id_categoria
+            })
+            return this.lista[objIndex]
+        },
         cargar: function() {
             const listaJSON = window.localStorage.getItem('ahorrADAS.categorias')
             if(listaJSON!=null) this.lista = JSON.parse(listaJSON)

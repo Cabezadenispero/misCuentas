@@ -34,7 +34,8 @@ window.onload = (event) => {
     $('agregar-operacion').addEventListener('click', function() {
         const operacionMonto = $('monto').value
         const operacionDescripcion = $('op_description').value
-        let objOperacion = crearOperacion(operacionMonto, operacionDescripcion)
+        const operacionCategoriaId = $('op_categoria').value
+        let objOperacion = crearOperacion(operacionMonto, operacionDescripcion, operacionCategoriaId)
         operaciones.agregar(objOperacion)
         
         $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion))
@@ -103,17 +104,15 @@ function pintarOperaciones() {
     operaciones.lista.forEach((objOperacion) => {
         $('operaciones-body').appendChild(generarNodoHTMLOperacion(objOperacion));
     })
-    
 }
 
 function generarNodoHTMLOperacion(objOperacion) {
-    
     
     let operacionNodo = document.createElement('tr')
     operacionNodo.id = objOperacion.id
     
     let categoriaNodo = document.createElement('td')
-    categoriaNodo.innerHTML = "categoria"
+    categoriaNodo.innerHTML = categorias.buscarPorId(objOperacion.id_categoria).nombre
     
     let montoNodo = document.createElement('td')
     montoNodo.innerHTML = objOperacion.monto
